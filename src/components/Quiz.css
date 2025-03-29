@@ -1,0 +1,140 @@
+.quiz-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  animation: slideUp 0.5s ease-out;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 15px 20px;
+  background: rgba(237, 242, 247, 0.8);
+  border-radius: 15px;
+}
+
+.timer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e53e3e;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.timer::before {
+  content: '⏱';
+  font-size: 1.4rem;
+}
+
+.score {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #38a169;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.score::before {
+  content: '🏆';
+  font-size: 1.4rem;
+}
+
+.question-container {
+  margin-bottom: 30px;
+  color: #2d3748;
+  padding: 20px;
+  background: rgba(237, 242, 247, 0.8);
+  border-radius: 15px;
+}
+
+.question-container h2 {
+  color: #4c51bf;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.question-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.options-container {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.option-button {
+  background: white;
+  border: 2px solid #e2e8f0;
+  padding: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #2d3748;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.option-button:hover:not(:disabled) {
+  background: #edf2f7;
+  border-color: #4c51bf;
+  transform: translateY(-2px);
+}
+
+.option-button.correct {
+  background: linear-gradient(45deg, #48bb78, #38a169);
+  color: white;
+  border-color: #38a169;
+  animation: pulse 1s;
+}
+
+.option-button.incorrect {
+  background: linear-gradient(45deg, #f56565, #e53e3e);
+  color: white;
+  border-color: #e53e3e;
+  animation: shake 0.5s;
+}
+
+.option-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.next-button {
+  margin-top: 30px;
+  background: linear-gradient(45deg, #4c51bf, #6366f1);
+  padding: 15px 40px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
